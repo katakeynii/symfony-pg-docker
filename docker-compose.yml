@@ -1,0 +1,33 @@
+version: '3.3'
+volumes:
+  postgres_data: {}
+  bundle_box: {}
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: ./docker/app/Dockerfile
+    
+    #entrypoint: ./docker-entrypoint.sh
+    environment:
+      # POSTGRES_PASSWORD: akileebox
+      DATABASE_URL: pgsql://pay_user:1k0l2p1y@db-stress.akilee-by-ines.com/akileePay
+    depends_on:
+      - postgres  
+    volumes:
+      - bundle_box:/bundle-box
+      - .:/app
+    ports:
+      - 7700:8000
+
+  postgres:
+    image: postgres
+    restart: always
+    # environment:
+    #   POSTGRES_PASSWORD: akileebox
+    #   POSTGRES_USER: akilee
+    volumes:
+      - postgres_data:/var/lib/paycore/postgresql/data
+    ports:
+      - 7654:5432
