@@ -7,9 +7,9 @@ red=`tput setaf 1`
 green=`tput setaf 2`
 reset=`tput sgr0`
 
-echo "${green}=================================================="
-echo "${green}===== GENERATING A NEW RAILS APP ================="
-echo "${green}=================================================="
+echo "${green}====================================================="
+echo "${green}====== GENERATING A NEW SYMFONY APP ================="
+echo "${green}====================================================="
 echo "${green}-"
 echo "${green}-"
 echo "${green}--------------------------------------------------"
@@ -33,11 +33,7 @@ END
 echo "${red} $USAGE"
 echo "${reset}"
 
-if [ $1 == "--help" ]
-then
-
-else
-			sudo docker-compose run app composer create-project symfony/skeleton my-project && composer require --dev symfony/web-server-bundle
-
-fi
-#
+sudo docker-compose run app composer create-project symfony/skeleton app
+sudo cp -a app/ .  
+sudo rm -rf app 
+sudo composer require --dev symfony/web-server-bundle
