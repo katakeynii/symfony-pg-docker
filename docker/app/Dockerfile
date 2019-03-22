@@ -60,6 +60,7 @@ RUN docker-php-ext-install mbstring
 RUN docker-php-ext-enable mbstring
 RUN echo 'alias sf="php bin/console"' >> ~/.bashrc
 
+
 ENV app=/app
 
 RUN mkdir -p /app
