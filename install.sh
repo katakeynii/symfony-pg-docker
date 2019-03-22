@@ -32,7 +32,8 @@ END
 )
 echo "${red} $USAGE"
 echo "${reset}"
-
+sudo cp .env.default .env
+sudo docker-compose build
 sudo docker-compose run app composer create-project symfony/skeleton app
 sudo cp -a app/ .  
 sudo rm -rf app 

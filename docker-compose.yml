@@ -10,9 +10,11 @@ services:
       dockerfile: ./docker/app/Dockerfile
     
     #entrypoint: ./docker-entrypoint.sh
-    environment:
-      # POSTGRES_PASSWORD: akileebox
-      DATABASE_URL: pgsql://pay_user:1k0l2p1y@db-stress.akilee-by-ines.com/akileePay
+    env_file:
+      - ./.env
+    # environment:
+      # POSTGRES_PASSWORD: password
+      # DATABASE_URL: pgsql://your_user:your_password@database.host/database.name
     depends_on:
       - postgres  
     volumes:
@@ -27,6 +29,8 @@ services:
     # environment:
     #   POSTGRES_PASSWORD: akileebox
     #   POSTGRES_USER: akilee
+    env_file:
+      - ./.env
     volumes:
       - postgres_data:/var/lib/paycore/postgresql/data
     ports:
