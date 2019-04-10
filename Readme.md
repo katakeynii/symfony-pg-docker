@@ -18,10 +18,16 @@ https://docs.docker.com/compose/install/
 ## Step 2 : Cloner le projet dans votre repertoire de travail 
 MyAppName est le nom de votre application.
 
-# `git clone git@gitlab.akilee-by-ines.com:katakeynii/symfony-installer.git MyAppName`
+# `git clone git@github.com:katakeynii/symfony-pg-docker.git MyAppName`
 
 ## Step 3 : Run the application
 
 La commande ci-dessous nous permet de lancer l'installation.
 
 # `./install.sh`
+
+
+Une fois que tout est terminé vous pouvez ouvrir votre application sur le port 8000.
+Postgres est lui disponible sur le port 7654
+
+

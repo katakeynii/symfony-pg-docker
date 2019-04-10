@@ -18,7 +18,7 @@ services:
       - bundle_box:/bundle-box
       - .:/app
     ports:
-      - 7700:8000
+      - 8000:8000
 
   postgres:
     image: postgres
