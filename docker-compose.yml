@@ -12,9 +12,6 @@ services:
     #entrypoint: ./docker-entrypoint.sh
     env_file:
       - ./.env
-    # environment:
-      # POSTGRES_PASSWORD: password
-      # DATABASE_URL: pgsql://your_user:your_password@database.host/database.name
     depends_on:
       - postgres  
     volumes:
@@ -26,9 +23,6 @@ services:
   postgres:
     image: postgres
     restart: always
-    # environment:
-    #   POSTGRES_PASSWORD: akileebox
-    #   POSTGRES_USER: akilee
     env_file:
       - ./.env
     volumes:
